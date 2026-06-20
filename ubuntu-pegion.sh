@@ -1,6 +1,6 @@
 #PROMETHEUS
 
-wget https://github.com/prometheus/prometheus/releases/download/v2.43.0/prometheus-2.43.0.linux-amd64.tar.gz
+wget https://github.com/prometheus/prometheus/releases/download/v2.43.0/prometheus-2.43.0.linux-amd64.tar.gz 
 tar -xf prometheus-2.43.0.linux-amd64.tar.gz
 sudo mv prometheus-2.43.0.linux-amd64/prometheus prometheus-2.43.0.linux-amd64/promtool /usr/local/bin
 
@@ -56,7 +56,7 @@ sudo systemctl start prometheus && sudo systemctl status prometheus --no-pager
 #GRAFANA
 sudo apt-get install -y adduser libfontconfig1
 wget https://dl.grafana.com/enterprise/release/grafana-enterprise_9.4.7_amd64.deb
-sudo dpkg -i grafana-enterprise_9.4.7_amd64.deb
+sudo dpkg -i grafana-enterprise_9.4.7_amd64.deb //install kosam
 sudo /bin/systemctl daemon-reload
 sudo /bin/systemctl enable grafana-server
 sudo /bin/systemctl start grafana-server
@@ -74,7 +74,7 @@ sudo cat <<EOF | sudo tee /etc/systemd/system/node_exporter.service
 Description=Node Exporter
 After=network.target
 
-[Service]
+[Service] // create a service
 User=node_exporter
 Group=node_exporter
 Type=simple
